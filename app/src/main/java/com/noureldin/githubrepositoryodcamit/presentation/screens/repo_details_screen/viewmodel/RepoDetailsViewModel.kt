@@ -14,9 +14,10 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @HiltViewModel
-class RepoDetailsViewModel(
+class RepoDetailsViewModel @Inject constructor(
     private val fetchRepositoryDetailsUseCase: FetchRepositoryDetailsUseCase
 ): ViewModel() {
     private val _reportDetailsStateFlow = MutableStateFlow<RepoDetailsUiState>(RepoDetailsUiState.InitialState)
