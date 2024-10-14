@@ -9,8 +9,8 @@ import androidx.room.Query
 interface RepoListDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertReposList(repoList: List<ReposListEntity>)
+    suspend fun insertTrendingRepositories(githubRepositoriesEntity: List<ReposListEntity>)
 
-    @Query("SELECT * FROM ReposListEntity")
-    suspend fun getReposList(): List<ReposListEntity>
+    @Query("SELECT * FROM GITHUB_REPOSITORIES_TABLE")
+    fun getTrendingRepositories(): List<ReposListEntity>
 }
