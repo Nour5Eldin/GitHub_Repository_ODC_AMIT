@@ -2,6 +2,7 @@ package com.noureldin.githubrepositoryodcamit.di
 
 import android.content.Context
 import androidx.room.Room
+import com.noureldin.githubrepositoryodcamit.data.data_source.local.data_store.DataStoreRepository
 import com.noureldin.githubrepositoryodcamit.data.data_source.local.room.GithubRepositoriesDatabase
 import com.noureldin.githubrepositoryodcamit.data.data_source.local.room.RepoListDao
 import com.noureldin.githubrepositoryodcamit.presentation.utils.Constant.Companion.DATABASE_NAME
@@ -35,4 +36,11 @@ object DatabaseModule {
     ): RepoListDao {
         return githubRepositoriesDatabase.repoListDao()
     }
+
+    @Singleton
+    @Provides
+    fun provideDataStorePreference(
+        @ApplicationContext context: Context
+    ) = DataStoreRepository(context)
+
 }
