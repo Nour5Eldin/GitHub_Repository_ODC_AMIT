@@ -1,0 +1,3 @@
+package com.noureldin.githubrepositoryodcamit.data.data_source.remote.retrofit.data_model.repo_details
+
+class CustomProperties
