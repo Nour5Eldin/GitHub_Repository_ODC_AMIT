@@ -71,7 +71,7 @@ fun RepoListContent(
                 )
             }
             repoListUiSate.isError -> {
-                repoListUiSate.customRemoteExceptionUiModel?.let {
+                repoListUiSate.customRemoteExceptionUiModel.let {
                     ErrorSection(
                         innerPadding = innerPadding,
                         customErrorExceptionUiModel = it,
