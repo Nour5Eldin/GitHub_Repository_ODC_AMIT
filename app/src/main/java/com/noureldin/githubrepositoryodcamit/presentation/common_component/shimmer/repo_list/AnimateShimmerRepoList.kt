@@ -60,7 +60,7 @@ fun AnimateShimmerRepoList(innerPadding: PaddingValues) {
                 start = Offset.Zero,
                 end = Offset(x = translateAnim.value, y = translateAnim.value)
             )
-
+            TrendingShimmerItem(brush = brush)
         }
     }
 

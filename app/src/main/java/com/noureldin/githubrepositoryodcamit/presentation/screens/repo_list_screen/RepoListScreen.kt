@@ -20,9 +20,7 @@ import com.noureldin.githubrepositoryodcamit.R
 import com.noureldin.githubrepositoryodcamit.presentation.common_component.AppBar
 import com.noureldin.githubrepositoryodcamit.presentation.common_component.ErrorSection
 import com.noureldin.githubrepositoryodcamit.presentation.common_component.shimmer.repo_list.AnimateShimmerRepoList
-import com.noureldin.githubrepositoryodcamit.presentation.navigation.Screens
 import com.noureldin.githubrepositoryodcamit.presentation.screens.repo_list_screen.component.RepoItem
-import com.noureldin.githubrepositoryodcamit.presentation.screens.repo_list_screen.model.GithubReposUiModel
 import com.noureldin.githubrepositoryodcamit.presentation.screens.repo_list_screen.model.RepoListUiState
 import com.noureldin.githubrepositoryodcamit.presentation.screens.repo_list_screen.preview_data.fakeRepoListErrorUiState
 import com.noureldin.githubrepositoryodcamit.presentation.screens.repo_list_screen.preview_data.fakeRepoListLoadingUiState
@@ -73,13 +71,15 @@ fun RepoListContent(
                 )
             }
             repoListUiSate.isError -> {
-                ErrorSection(
-                    innerPadding = innerPadding,
-                    customErrorExceptionUiModel = repoListUiSate.customRemoteExceptionUiModel,
-                    onRefreshButtonClicked = {
-                        onRefreshButtonClicked()
-                    }
-                )
+                repoListUiSate.customRemoteExceptionUiModel?.let {
+                    ErrorSection(
+                        innerPadding = innerPadding,
+                        customErrorExceptionUiModel = it,
+                        onRefreshButtonClicked = {
+                            onRefreshButtonClicked()
+                        }
+                    )
+                }
             }
             repoListUiSate.repoList.isNotEmpty() -> {
                 LazyColumn(
