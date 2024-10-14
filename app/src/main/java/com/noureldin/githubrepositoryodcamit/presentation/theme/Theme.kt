@@ -1,4 +1,4 @@
-package com.noureldin.githubrepositoryodcamit.ui.theme
+package com.noureldin.githubrepositoryodcamit.presentation.theme
 
 import android.app.Activity
 import android.os.Build
