@@ -112,7 +112,7 @@ fun IssueItem(
 private fun PreviewIssuesItem() {
     GitHubRepositoryODCAMITTheme {
         IssueItem(
-            issuesUiModel = issuesUiModelPreviewData
+            issuesUiModel = issuesUiModelPreviewData.first()
         )
     }
 }

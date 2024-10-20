@@ -111,7 +111,7 @@ fun PreviewTrendingGithubScreen() {
     GitHubRepositoryODCAMITTheme (darkTheme = false) {
         IssuesScreen(
             issuesUiState = IssuesUiState(
-                issuesList  = listOf(issuesUiModelPreviewData)
+                issuesList  = listOf(issuesUiModelPreviewData).first()
             ),
             onRefreshList = {},
             onBackArrowClicked = {}

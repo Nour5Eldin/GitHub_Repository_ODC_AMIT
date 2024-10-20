@@ -57,7 +57,7 @@ fun AppNavHost() {
         composable(route = Screens.IssuesListScreen.route) {
             IssuesScreen(
                 issuesUiState = IssuesUiState(
-                    issuesList  = listOf(issuesUiModelPreviewData)
+                    issuesList  = listOf(issuesUiModelPreviewData).last()
                 ),
                 onRefreshList = {},
                 onBackArrowClicked = {navController.popBackStack()}
