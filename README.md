@@ -78,17 +78,17 @@ Github Repository Android Application Building with Latest Technology & Advanced
   <!-- Row 1 -->
   <div style="text-align: center; width: 30%;">
     <p>My Splash Screen</p>
-    <img src="https://github.com/user-attachments/assets/feb13655-ab7f-4bdc-9d4e-3abf22601f44" width="100%" height="500" style="object-fit: cover;" />
+    <img src="https://github.com/user-attachments/assets/feb13655-ab7f-4bdc-9d4e-3abf22601f44" width="400" height="500" style="object-fit: cover;" />
   </div>
 
   <div style="text-align: center; width: 30%;">
     <p>Shimmer Screen</p>
-    <img src="https://github.com/user-attachments/assets/5cb00164-ee8e-462e-9c10-8db7d024d5da" width="100%" height="500" style="object-fit: cover;" />
+    <img src="https://github.com/user-attachments/assets/5cb00164-ee8e-462e-9c10-8db7d024d5da" width="400" height="500" style="object-fit: cover;" />
   </div>
 
   <div style="text-align: center; width: 30%;">
     <p>Repository List Screen</p>
-    <img src="https://github.com/user-attachments/assets/606a9431-7af1-4a7d-96fe-fb37b013be17" width="100%" height="500" style="object-fit: cover;" />
+    <img src="https://github.com/user-attachments/assets/606a9431-7af1-4a7d-96fe-fb37b013be17" width="400" height="500" style="object-fit: cover;" />
   </div>
 </div>
 
@@ -96,17 +96,17 @@ Github Repository Android Application Building with Latest Technology & Advanced
   <!-- Row 2 -->
   <div style="text-align: center; width: 30%;">
     <p>Repository Details Screen</p>
-    <img src="https://github.com/user-attachments/assets/95909c76-5c7f-42d3-80dd-b5fc143bef64" width="100%" height="500" style="object-fit: cover;" />
+    <img src="https://github.com/user-attachments/assets/95909c76-5c7f-42d3-80dd-b5fc143bef64" width="400" height="500" style="object-fit: cover;" />
   </div>
 
   <div style="text-align: center; width: 30%;">
     <p>Repository Issues Screen</p>
-    <img src="https://github.com/user-attachments/assets/57812351-8b7f-4ec6-b716-18dfbf8414bf" width="100%" height="500" style="object-fit: cover;" />
+    <img src="https://github.com/user-attachments/assets/57812351-8b7f-4ec6-b716-18dfbf8414bf" width="400" height="500" style="object-fit: cover;" />
   </div>
 
   <div style="text-align: center; width: 30%;">
     <p>Network Error Screen</p>
-    <img src="https://github.com/user-attachments/assets/c652fcab-5b1b-48f6-a552-74f324525c41" width="100%" height="500" style="object-fit: cover;" />
+    <img src="https://github.com/user-attachments/assets/c652fcab-5b1b-48f6-a552-74f324525c41" width="400" height="500" style="object-fit: cover;" />
   </div>
 </div>
 
