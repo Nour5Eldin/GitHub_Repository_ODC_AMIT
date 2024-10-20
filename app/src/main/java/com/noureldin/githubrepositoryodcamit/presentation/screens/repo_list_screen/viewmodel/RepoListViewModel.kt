@@ -1,5 +1,6 @@
 package com.noureldin.githubrepositoryodcamit.presentation.screens.repo_list_screen.viewmodel
 
+
 import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -26,11 +27,11 @@ class RepoListViewModel @Inject constructor(
     application: Application
 ): ViewModel() {
     private val _repoListStateFlow = MutableStateFlow<RepoListUiState>(RepoListUiState(isLoading = true))
-           val repoListStateFlow: StateFlow<RepoListUiState> = _repoListStateFlow.asStateFlow()
+    val repoListStateFlow: StateFlow<RepoListUiState> = _repoListStateFlow.asStateFlow()
+
     private val coroutineExceptionHandler = CoroutineExceptionHandler { _, throwable ->
         _repoListStateFlow.value = when (throwable) {
             is CustomRemoteExceptionDomainModel -> {
-                // Handle your custom domain exceptions
                 RepoListUiState(
                     isLoading = false,
                     isError = true,
@@ -38,15 +39,18 @@ class RepoListViewModel @Inject constructor(
                 )
             }
             is UnknownHostException -> {
-                // Handle no internet connection or unreachable server
-                RepoListUiState(
-                    isLoading = false,
-                    isError = true,
-                    customRemoteExceptionUiModel = CustomRemoteExceptionUiModel.NoInternetConnection
-                )
+                // Only set error state if we were trying to fetch data
+                if (_repoListStateFlow.value.isLoading) {
+                    RepoListUiState(
+                        isLoading = false,
+                        isError = true,
+                        customRemoteExceptionUiModel = CustomRemoteExceptionUiModel.NoInternetConnection
+                    )
+                } else {
+                    _repoListStateFlow.value // Keep the existing state
+                }
             }
             else -> {
-                // Handle other types of exceptions (general case)
                 RepoListUiState(
                     isLoading = false,
                     isError = true,
@@ -57,11 +61,11 @@ class RepoListViewModel @Inject constructor(
     }
 
     private val networkObserver = NetworkObserver(application)
+
     init {
-        // Observe network status and update UI accordingly
         viewModelScope.launch {
             networkObserver.isNetworkAvailable.collectLatest { isAvailable ->
-                if (!isAvailable) {
+                if (!isAvailable && _repoListStateFlow.value.isLoading) {
                     _repoListStateFlow.value = RepoListUiState(
                         isLoading = false,
                         isError = true,
@@ -71,7 +75,9 @@ class RepoListViewModel @Inject constructor(
             }
         }
     }
+
     fun requestGithubRepoList(){
+        _repoListStateFlow.value = RepoListUiState(isLoading = true) // Reset to loading state
         viewModelScope.launch(Dispatchers.IO + coroutineExceptionHandler) {
             try {
                 val repoList = githubReposListUserCase()
@@ -79,11 +85,13 @@ class RepoListViewModel @Inject constructor(
                     isLoading = false,
                     repoList = repoList.map { it.toGithubReposUiModel() }
                 )
-            } catch (e: Exception){
+            } catch (e: Exception) {
+                // Handle exceptions as before
                 _repoListStateFlow.value = RepoListUiState(
                     isLoading = false,
                     isError = true,
-                    customRemoteExceptionUiModel = (e as CustomRemoteExceptionDomainModel).toCustomExceptionRemoteUiModel()
+                    customRemoteExceptionUiModel = (e as? CustomRemoteExceptionDomainModel)?.toCustomExceptionRemoteUiModel()
+                        ?: CustomRemoteExceptionUiModel.Unknown
                 )
             }
         }

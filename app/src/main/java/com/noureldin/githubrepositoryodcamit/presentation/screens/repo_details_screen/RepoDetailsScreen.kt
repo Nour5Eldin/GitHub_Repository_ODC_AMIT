@@ -2,27 +2,10 @@ package com.noureldin.githubrepositoryodcamit.presentation.screens.repo_details_
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.getValue
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -51,21 +34,19 @@ import com.noureldin.githubrepositoryodcamit.presentation.theme.GitHubRepository
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun RepoDetailsScreen(
-    modifier: Modifier = Modifier,
     owner: String,
     name: String,
     onClickBack: () -> Unit,
-    onShowIssuesClicked: () -> Unit
+    onShowIssuesClicked: () -> Unit,
+    viewModel: RepoDetailsViewModel = hiltViewModel()
 ) {
-    val repoDetailsViewModel: RepoDetailsViewModel = hiltViewModel()
-
     LaunchedEffect(Unit) {
-        repoDetailsViewModel.requestRepoDetails(ownerName = owner, name = name)
+        viewModel.requestRepoDetails(ownerName = owner, name = name)
     }
 
-    val repoDetailsUiState by repoDetailsViewModel.repoDetailsStateFlow.collectAsStateWithLifecycle()
+    val repoDetailsUiState by viewModel.repoDetailsStateFlow.collectAsStateWithLifecycle()
 
-    Scaffold(modifier = modifier.fillMaxSize(),
+    Scaffold(
         topBar = {
             AppBar(
                 onBackButtonClicked = onClickBack,
@@ -74,29 +55,28 @@ fun RepoDetailsScreen(
         }
     ) { innerPadding ->
 
-        when (val result = repoDetailsUiState) {
-            is RepoDetailsUiState.InitialState -> {}
-
-            is RepoDetailsUiState.Loading -> {
-                if (result.isLoading)
-                    AnimateShimmerDetails(
-                        innerPadding = innerPadding
-                    )
+        when (repoDetailsUiState) {
+            is RepoDetailsUiState.InitialState -> {
+                // Optionally handle the initial state
             }
-
+            is RepoDetailsUiState.Loading -> {
+                if ((repoDetailsUiState as RepoDetailsUiState.Loading).isLoading) {
+                    AnimateShimmerDetails(innerPadding = innerPadding)
+                }
+            }
             is RepoDetailsUiState.RepoDetailsUiModelData -> {
                 DetailsContent(
                     innerPadding = innerPadding,
-                    repoDetailsUiModel = result.repositoryDetails,
+                    repoDetailsUiModel = (repoDetailsUiState as RepoDetailsUiState.RepoDetailsUiModelData).repositoryDetails,
                     onShowIssuesClicked = onShowIssuesClicked
                 )
             }
             is RepoDetailsUiState.Error -> {
                 ErrorSection(
                     innerPadding = innerPadding,
-                    customErrorExceptionUiModel = result.customErrorExceptionUiModel,
+                    customErrorExceptionUiModel = (repoDetailsUiState as RepoDetailsUiState.Error).customErrorExceptionUiModel,
                     onRefreshButtonClicked = {
-                        repoDetailsViewModel.requestRepoDetails(ownerName = owner, name = name)
+                        viewModel.requestRepoDetails(ownerName = owner, name = name)
                     }
                 )
             }
@@ -118,22 +98,21 @@ fun DetailsContent(
         verticalArrangement = Arrangement.spacedBy(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-
         Image(
             painter = rememberAsyncImagePainter(
                 ImageRequest.Builder(LocalContext.current)
                     .data(data = repoDetailsUiModel.avatar)
-                    .apply(block = fun ImageRequest.Builder.() {
+                    .apply(block = {
                         crossfade(1000)
                         placeholder(R.drawable.ic_github_placeholser)
                     })
                     .build()
             ),
-            contentDescription = stringResource(R.string.accessbility_details_your_avatar_image),
+            contentDescription = null,
             modifier = Modifier
                 .size(150.dp)
                 .clip(RoundedCornerShape(150.dp))
-                .padding(top = 16.dp),
+                .padding(top = 16.dp)
         )
 
         Text(
@@ -161,8 +140,7 @@ fun DetailsContent(
                 )
                 Text(
                     text = repoDetailsUiModel.language,
-                    modifier = Modifier
-                        .padding(start = 8.dp),
+                    modifier = Modifier.padding(start = 8.dp),
                     color = MaterialTheme.colorScheme.onSurface,
                     style = MaterialTheme.typography.bodyLarge
                 )
@@ -199,6 +177,7 @@ fun DetailsContent(
         }
     }
 }
+
 @ExperimentalMaterial3Api
 @Preview(showBackground = true)
 @Composable
@@ -211,3 +190,4 @@ fun DetailsScreenPreview() {
         )
     }
 }
+
