@@ -70,23 +70,9 @@ Github Repository Android Application Building with Latest Technology & Advanced
 - The last successfully fetched list of repositories is stored and displayed.
 - If cached data exists, the app displays the cached repositories so users can still view them while offline.
 - If no cached data is available, a message is shown to inform the user that no data is available offline.
-## Screenshots
 
-![My Splash Screen](https://github.com/user-attachments/assets/feb13655-ab7f-4bdc-9d4e-3abf22601f44)
-
-![Shimmer Screen](https://github.com/user-attachments/assets/5cb00164-ee8e-462e-9c10-8db7d024d5da)
-
-![Repository List Screen](https://github.com/user-attachments/assets/606a9431-7af1-4a7d-96fe-fb37b013be17)
-
-![Repository Details Screen](https://github.com/user-attachments/assets/95909c76-5c7f-42d3-80dd-b5fc143bef64)
-
-![Repository Issues Screen](https://github.com/user-attachments/assets/57812351-8b7f-4ec6-b716-18dfbf8414bf)
-
-![Network Error Screen](https://github.com/user-attachments/assets/c652fcab-5b1b-48f6-a552-74f324525c41)
-
-## Screenshots
-
-## Screenshots
+  
+## Screen shots
 
 <div style="display: flex; flex-wrap: wrap; justify-content: space-around; gap: 10px;">
   <!-- Row 1 -->
@@ -120,8 +106,23 @@ Github Repository Android Application Building with Latest Technology & Advanced
     <p>Network Error Screen</p>
     <img src="https://github.com/user-attachments/assets/c652fcab-5b1b-48f6-a552-74f324525c41" width="300" height="400" />
   </div>
-</div>
 
+  <!-- Row 3 -->
+  <div style="text-align: center; width: 30%;">
+    <p>New Screen 1</p>
+    <img src="https://example.com/new-image-1.jpg" width="300" height="400" />
+  </div>
+
+  <div style="text-align: center; width: 30%;">
+    <p>New Screen 2</p>
+    <img src="https://example.com/new-image-2.jpg" width="300" height="400" />
+  </div>
+
+  <div style="text-align: center; width: 30%;">
+    <p>New Screen 3</p>
+    <img src="https://example.com/new-image-3.jpg" width="300" height="400" />
+  </div>
+</div>
 
 
 
