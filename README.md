@@ -1,5 +1,5 @@
 
-![Logo](![social](https://github.com/user-attachments/assets/570d5e02-1844-4a34-8977-46dbac9bb242)
+![Logo](https://github.com/user-attachments/assets/570d5e02-1844-4a34-8977-46dbac9bb242)
 # Github Repository By ODC & AMIT
 Github Repository Android Application Building with Latest Technology & Advanced Android Topics at AMIT Learing & Orange Degital Center InternShip.
 
