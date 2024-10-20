@@ -1,5 +1,5 @@
 
-![Logo](![social](https://github.com/user-attachments/assets/570d5e02-1844-4a34-8977-46dbac9bb242))
+![Logo](![social](https://github.com/user-attachments/assets/570d5e02-1844-4a34-8977-46dbac9bb242)
 # Github Repository By ODC & AMIT
 Github Repository Android Application Building with Latest Technology & Advanced Android Topics at AMIT Learing & Orange Degital Center InternShip.
 
@@ -74,15 +74,15 @@ Github Repository Android Application Building with Latest Technology & Advanced
 
 ![My Splash Screen](https://github.com/user-attachments/assets/feb13655-ab7f-4bdc-9d4e-3abf22601f44)
 
-![Shimmer Screen]((https://github.com/user-attachments/assets/5cb00164-ee8e-462e-9c10-8db7d024d5da))
+![Shimmer Screen](https://github.com/user-attachments/assets/5cb00164-ee8e-462e-9c10-8db7d024d5da)
 
-![Repository List Screen](![repolist](https://github.com/user-attachments/assets/606a9431-7af1-4a7d-96fe-fb37b013be17))
+![Repository List Screen](https://github.com/user-attachments/assets/606a9431-7af1-4a7d-96fe-fb37b013be17)
 
-![Repository Details Screen](![repoprofile](https://github.com/user-attachments/assets/95909c76-5c7f-42d3-80dd-b5fc143bef64))
+![Repository Details Screen](https://github.com/user-attachments/assets/95909c76-5c7f-42d3-80dd-b5fc143bef64)
 
-![Repository Issues Screen](![issuelist](https://github.com/user-attachments/assets/57812351-8b7f-4ec6-b716-18dfbf8414bf)
+![Repository Issues Screen](https://github.com/user-attachments/assets/57812351-8b7f-4ec6-b716-18dfbf8414bf)
 
-![Network Error Screen](![networkerror](https://github.com/user-attachments/assets/c652fcab-5b1b-48f6-a552-74f324525c41))
+![Network Error Screen](https://github.com/user-attachments/assets/c652fcab-5b1b-48f6-a552-74f324525c41)
 
 ## Installing  project
 
