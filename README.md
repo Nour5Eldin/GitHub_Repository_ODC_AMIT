@@ -107,25 +107,6 @@ Github Repository Android Application Building with Latest Technology & Advanced
     <img src="https://github.com/user-attachments/assets/c652fcab-5b1b-48f6-a552-74f324525c41" width="300" height="400" />
   </div>
 
-  <!-- Row 3 -->
-  <div style="text-align: center; width: 30%;">
-    <p>New Screen 1</p>
-    <img src="https://example.com/new-image-1.jpg" width="300" height="400" />
-  </div>
-
-  <div style="text-align: center; width: 30%;">
-    <p>New Screen 2</p>
-    <img src="https://example.com/new-image-2.jpg" width="300" height="400" />
-  </div>
-
-  <div style="text-align: center; width: 30%;">
-    <p>New Screen 3</p>
-    <img src="https://example.com/new-image-3.jpg" width="300" height="400" />
-  </div>
-</div>
-
-
-
 ## Installing  project
 
 Clone the project
