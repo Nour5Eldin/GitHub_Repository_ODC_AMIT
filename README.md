@@ -1,5 +1,5 @@
 
-![Logo](https://drive.google.com/file/d/1Xb-XKIdP7vDX4vRMa-EN8eMiEnda9cf3/view?usp=drive_link)
+![Logo](![social](https://github.com/user-attachments/assets/570d5e02-1844-4a34-8977-46dbac9bb242))
 # Github Repository By ODC & AMIT
 Github Repository Android Application Building with Latest Technology & Advanced Android Topics at AMIT Learing & Orange Degital Center InternShip.
 
@@ -72,17 +72,17 @@ Github Repository Android Application Building with Latest Technology & Advanced
 - If no cached data is available, a message is shown to inform the user that no data is available offline.
 ## Screenshots
 
-![My Splash Screen](https://drive.google.com/file/d/1RtUaIDNYB9tGoXolnDrHodijiddlw_lU/view?usp=drive_link)
+![My Splash Screen](https://github.com/user-attachments/assets/feb13655-ab7f-4bdc-9d4e-3abf22601f44)
 
-![Shimmer Screen](https://drive.google.com/file/d/188K_M9Sm0cEjTr73bEJQTrDtpas1BT0C/view?usp=drive_link)
+![Shimmer Screen]((https://github.com/user-attachments/assets/5cb00164-ee8e-462e-9c10-8db7d024d5da))
 
-![Repository List Screen](https://drive.google.com/file/d/1cAptQk4g5W6aruIt0XJQIru_iMRr4IZf/view?usp=drive_link)
+![Repository List Screen](![repolist](https://github.com/user-attachments/assets/606a9431-7af1-4a7d-96fe-fb37b013be17))
 
-![Repository Details Screen](https://drive.google.com/file/d/12S3_f8qhLMgsNcAP0fSVfoofOoutL3An/view?usp=drive_link)
+![Repository Details Screen](![repoprofile](https://github.com/user-attachments/assets/95909c76-5c7f-42d3-80dd-b5fc143bef64))
 
-![Repository Issues Screen](https://drive.google.com/file/d/1n_6J12JpoFBe-0k53XreuT34kwduRV4m/view?usp=drive_link)
+![Repository Issues Screen](![issuelist](https://github.com/user-attachments/assets/57812351-8b7f-4ec6-b716-18dfbf8414bf)
 
-![Network Error Screen](https://drive.google.com/file/d/1c7_el-TXTDoGDI7rv9fEsTOt3726PyIh/view?usp=drive_link)
+![Network Error Screen](![networkerror](https://github.com/user-attachments/assets/c652fcab-5b1b-48f6-a552-74f324525c41))
 
 ## Installing  project
 
